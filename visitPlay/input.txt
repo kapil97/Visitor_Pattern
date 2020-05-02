@@ -1,0 +1,16 @@
+money:10000
+money:4000
+item:cinema
+item:medicine
+item:householdItem
+money:0
+item:medicine
+item:householdItem
+money:25000
+item:yacht
+item:vacationTrip
+money:60000
+item:medicine
+item:householdItem
+money:60000
+item:yacht
