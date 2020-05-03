@@ -42,6 +42,10 @@ public final class FileProcessor{
 		return newValue;
 	}
 
+	/**
+	 * File close method.
+	 * @throws IOException
+	 */
 	public void close() throws IOException {
 		try {
 			reader.close();

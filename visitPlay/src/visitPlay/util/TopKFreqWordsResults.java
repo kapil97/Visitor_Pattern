@@ -11,16 +11,27 @@ public class TopKFreqWordsResults implements Results{
     public TopKFreqWordsResults(String TopKOutputFileNameIn){
         TopKOutputFileName=TopKOutputFileNameIn;
     }
+
+    /**
+     * Adding data to Result List.
+     * @param output
+     */
     @Override
     public void addToResultList(List<String> output) {
         outputList.add(output);
     }
 
+    /**
+     * Printing Result List
+     */
     @Override
     public void printList() {
         System.out.println(outputList);
     }
 
+    /**
+     * Writing to File Method.
+     */
     @Override
     public void writeToFile() {
             try {
@@ -48,4 +59,9 @@ public class TopKFreqWordsResults implements Results{
                 System.out.println("Process Complete");
             }
         }
+
+    @Override
+    public String toString(){
+        return "TopKFreqWordsResults";
+    }
 }

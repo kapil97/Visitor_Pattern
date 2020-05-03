@@ -14,11 +14,22 @@ public class SpellCheckAnalyzer implements Visitor {
     List<String> resultList=new ArrayList<>();
     private final Map<Integer, List<String>> acceptableWords=new HashMap<>();
     IteratorI myIterator=new MyArrayList();
+
+    /**
+     * Spell Check Analyzer Constructor to process acceptable words file.
+     * @param acceptableWordsFilenameIn
+     * @param spellCheckAnalyzerResultsIn
+     */
     public SpellCheckAnalyzer(String acceptableWordsFilenameIn, Results spellCheckAnalyzerResultsIn){
         spellCheckAnalyzerResults=spellCheckAnalyzerResultsIn;
         acceptableWordsFilename=acceptableWordsFilenameIn;
         processAcceptableFile(acceptableWordsFilenameIn);
     }
+
+    /**
+     * Process Acceptable Words File.
+     * @param acceptableWordsFilename
+     */
     private void processAcceptableFile(String acceptableWordsFilename){
         try {
             FileProcessor fileProcessor=new FileProcessor(acceptableWordsFilename);
@@ -33,6 +44,11 @@ public class SpellCheckAnalyzer implements Visitor {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Visit method of SpellCheckAnalyzer method.
+     * @param myElement
+     */
     @Override
     public void visit(Element myElement) {
         Iterator iterator=myIterator.getIterator();
@@ -45,6 +61,11 @@ public class SpellCheckAnalyzer implements Visitor {
         spellCheckAnalyzerResults.addToResultList(resultList);
         System.out.println("Result List of SpellCheck >>> "+resultList);
     }
+
+    /**
+     * Private methods to perform spell Check.
+     * @param element
+     */
     private void spellCheckByLength(Element element){
         String[] words=element.toString().split(" ");
         System.out.println();

@@ -13,16 +13,27 @@ public class SpellCheckResults implements Results {
         spellCheckOutputFilename=spellCheckOutputFilenameIn;
     }
 
+    /**
+     * Setting List to result List
+     * @param output
+     */
     @Override
     public void addToResultList(List<String> output) {
         outputList=output;
     }
+
+    /**
+     * Printing Result List
+     */
 
     @Override
     public void printList() {
     System.out.println("Output List: "+outputList);
     }
 
+    /**
+     * Writing to Output File Method.
+     */
     @Override
     public void writeToFile() {
         try {
@@ -49,6 +60,8 @@ public class SpellCheckResults implements Results {
             System.out.println("Process Complete");
         }
     }
-
-
+    @Override
+        public String toString(){
+            return "SpellCheckResults";
+    }
 }

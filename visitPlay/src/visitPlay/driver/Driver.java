@@ -9,6 +9,11 @@ import visitPlay.visitor.Visitor;
 import java.io.IOException;
 
 public class Driver {
+    /**
+     * Run analysis method to assign visitors to elements.
+     * @param fileProcessor
+     * @param visitors
+     */
     private static void runAnalysis(FileProcessor fileProcessor, Visitor... visitors) {
         Element myArrayList = new MyArrayList.Builder()
                 .withFileProcessor(fileProcessor)
@@ -19,12 +24,20 @@ public class Driver {
         }
     }
 
+    /**
+     * Persisting Results into results file.
+     * @param analysisResults
+     */
     private static void persistResults(Results... analysisResults) {
         for (Results results : analysisResults) {
             results.writeToFile();
         }
     }
 
+    /**
+     * Main Method
+     * @param args
+     */
     public static void main(String[] args) {
 
         final int REQUIRED_NUMBER_OF_ARGS = 5;

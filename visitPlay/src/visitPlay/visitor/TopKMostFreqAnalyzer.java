@@ -9,11 +9,21 @@ public class TopKMostFreqAnalyzer implements Visitor {
     String k;
     Results topKMostFreqAnalyzerResults;
     IteratorI myIterator=new MyArrayList();
+
+    /**
+     * TopKMostFreqAnalyzer Constructor.
+     * @param kIn
+     * @param topKMostFreqAnalyzerResultsIn
+     */
     public TopKMostFreqAnalyzer(String kIn, Results topKMostFreqAnalyzerResultsIn){
         k=kIn;
         topKMostFreqAnalyzerResults=topKMostFreqAnalyzerResultsIn;
     }
 
+    /**
+     * Visit method of the visitor.
+     * @param element
+     */
     @Override
     public void visit(Element element) {
         Iterator iterator=myIterator.getIterator();
@@ -23,6 +33,11 @@ public class TopKMostFreqAnalyzer implements Visitor {
             calculateTopKFreqWords(currentElement);
         }
     }
+
+    /**
+     * Private Methods for Calculate Top K frequent words.
+     * @param element
+     */
     private void calculateTopKFreqWords(Element element){
 
         Map<String, Integer> wordFrequency=new LinkedHashMap<>();

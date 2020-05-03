@@ -4,6 +4,7 @@ import visitPlay.visitor.Visitor;
 
 public class MyElement implements Element {
     String line;
+
     public MyElement(String lineIn){
         line=lineIn;
     }

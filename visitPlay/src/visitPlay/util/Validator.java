@@ -15,6 +15,10 @@ public class Validator implements ValidatorI {
         k=kIn;
     }
 
+    /**
+     * Return true if valid.
+     * @return
+     */
     @Override
     public boolean valid(){
         File inputFile=new File(inputFilename);

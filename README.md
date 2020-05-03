@@ -44,7 +44,13 @@ ant -buildfile visitPlay/src/build.xml run \
 -----------------------------------------------------------------------
 ## Description:
 
-In progress..
+To implement Visitor Pattern, and visit the Sentences encapsulated into Elements.<br>
+There are Two Visitors: ```TopKMostFreqAnalyzer``` and ```SpellCheckAnalyzer```.<br>
+```TopKMostFreqAnalyzer``` is implemented using ```k Value``` and priority Queue.<br>
+```SpellCheckAnalyzer``` is implemented using acceptable words file.<br>
+References: priority queue referred from PK's piazza post.<br>
+<br>
+Number of Slack Days Used:1
 
 -----------------------------------------------------------------------
 ### Academic Honesty statement:
@@ -56,6 +62,6 @@ I am involved in plagiarism or cheating an official form will be
 submitted to the Academic Honesty Committee of the Watson School to
 determine the action that needs to be taken. "
 
-Date: 05/xx/2020
+Date: 05/03/2020
 
 
