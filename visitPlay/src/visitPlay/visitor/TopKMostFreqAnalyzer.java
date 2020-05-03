@@ -1,5 +1,6 @@
 package visitPlay.visitor;
 
+import visitPlay.element.MyElement;
 import visitPlay.util.Results;
 
 public class TopKMostFreqAnalyzer implements Visitor {
@@ -11,4 +12,8 @@ public class TopKMostFreqAnalyzer implements Visitor {
     }
 
 
+    @Override
+    public void visit(MyElement myElement) {
+
+    }
 }

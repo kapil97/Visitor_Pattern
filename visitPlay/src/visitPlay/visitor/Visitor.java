@@ -1,5 +1,7 @@
 package visitPlay.visitor;
 
-public interface Visitor {
+import visitPlay.element.MyElement;
 
+public interface Visitor {
+void visit(MyElement myElement);
 }

@@ -6,7 +6,6 @@ import visitPlay.util.*;
 import visitPlay.visitor.SpellCheckAnalyzer;
 import visitPlay.visitor.TopKMostFreqAnalyzer;
 import visitPlay.visitor.Visitor;
-
 import java.io.IOException;
 
 public class Driver {
@@ -47,7 +46,7 @@ public class Driver {
 
         FileProcessor fileProcessor=null;
         try {
-           fileProcessor = new FileProcessor(inputFilename);
+            fileProcessor = new FileProcessor(inputFilename);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +58,6 @@ public class Driver {
         Visitor spellCheckAnalyzer = new SpellCheckAnalyzer(acceptableWordsFilename, spellCheckResults);
 
         runAnalysis(fileProcessor, topKMostFreqAnalyzer, spellCheckAnalyzer);
-
-        persistResults(topKFreqWordsResults, spellCheckResults);
+        //persistResults(topKFreqWordsResults, spellCheckResults);
     }
 }

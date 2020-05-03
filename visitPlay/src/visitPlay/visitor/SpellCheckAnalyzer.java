@@ -1,5 +1,6 @@
 package visitPlay.visitor;
 
+import visitPlay.element.MyElement;
 import visitPlay.util.Results;
 
 public class SpellCheckAnalyzer implements Visitor {
@@ -11,4 +12,8 @@ public class SpellCheckAnalyzer implements Visitor {
     }
 
 
+    @Override
+    public void visit(MyElement myElement) {
+
+    }
 }
