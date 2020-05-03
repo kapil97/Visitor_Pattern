@@ -64,6 +64,7 @@ public class MyArrayList implements Element, IteratorI {
             return sentences.split("\\.");
 
         }
+
     }
 
 }

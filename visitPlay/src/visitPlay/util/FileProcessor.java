@@ -11,6 +11,7 @@ import java.nio.file.InvalidPathException;
 /**
  * FileProcessor Class
  */
+
 public final class FileProcessor{
 	private final BufferedReader reader;
 	private String line;
@@ -32,6 +33,7 @@ public final class FileProcessor{
 	 * @throws NumberFormatException
 	 * @throws IOException
 	 */
+
 	public String poll() throws NumberFormatException, IOException {
 		if (null == line) return null;
 

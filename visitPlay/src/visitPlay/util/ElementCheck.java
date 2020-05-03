@@ -1,4 +1,5 @@
 package visitPlay.util;
+
 public class ElementCheck implements WordMap{
     String word;
     int count;

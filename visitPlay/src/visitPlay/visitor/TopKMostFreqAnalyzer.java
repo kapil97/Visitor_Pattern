@@ -3,7 +3,6 @@ package visitPlay.visitor;
 import visitPlay.element.Element;
 import visitPlay.element.MyArrayList;
 import visitPlay.util.*;
-
 import java.util.*;
 
 public class TopKMostFreqAnalyzer implements Visitor {

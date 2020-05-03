@@ -42,21 +42,27 @@ public class Driver {
                 k=args[2],
                 topKOutputFilename=args[3],
                 spellCheckOutputFilename=args[4];
+        ValidatorI validator=new Validator(inputFilename,acceptableWordsFilename,k);
+        if(validator.valid()) {
+            FileProcessor fileProcessor = null;
+            try {
+                fileProcessor = new FileProcessor(inputFilename);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        FileProcessor fileProcessor=null;
-        try {
-            fileProcessor = new FileProcessor(inputFilename);
-        } catch (IOException e) {
-            e.printStackTrace();
+            Results topKFreqWordsResults = new TopKFreqWordsResults(topKOutputFilename);
+            Visitor topKMostFreqAnalyzer = new TopKMostFreqAnalyzer(k, topKFreqWordsResults);
+
+            Results spellCheckResults = new SpellCheckResults(spellCheckOutputFilename);
+            Visitor spellCheckAnalyzer = new SpellCheckAnalyzer(acceptableWordsFilename, spellCheckResults);
+
+            runAnalysis(fileProcessor, topKMostFreqAnalyzer, spellCheckAnalyzer);
+            persistResults(topKFreqWordsResults, spellCheckResults);
         }
-
-        Results topKFreqWordsResults = new TopKFreqWordsResults(topKOutputFilename);
-        Visitor topKMostFreqAnalyzer = new TopKMostFreqAnalyzer(k, topKFreqWordsResults);
-
-        Results spellCheckResults = new SpellCheckResults(spellCheckOutputFilename);
-        Visitor spellCheckAnalyzer = new SpellCheckAnalyzer(acceptableWordsFilename, spellCheckResults);
-
-        runAnalysis(fileProcessor, topKMostFreqAnalyzer, spellCheckAnalyzer);
-        persistResults(topKFreqWordsResults, spellCheckResults);
+        else
+        {
+            System.exit(0);
+        }
     }
 }

@@ -95,7 +95,7 @@ public class SpellCheckAnalyzer implements Visitor {
         if (!acceptableWords.containsKey(length)) {
             acceptableWords.put(length, new ArrayList<>());
         }
-        acceptableWords.get(length).add(word);
+        acceptableWords.get(length).add(word.toLowerCase());
         }
     }
 
