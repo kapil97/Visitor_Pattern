@@ -58,6 +58,6 @@ public class Driver {
         Visitor spellCheckAnalyzer = new SpellCheckAnalyzer(acceptableWordsFilename, spellCheckResults);
 
         runAnalysis(fileProcessor, topKMostFreqAnalyzer, spellCheckAnalyzer);
-        //persistResults(topKFreqWordsResults, spellCheckResults);
+        persistResults(topKFreqWordsResults, spellCheckResults);
     }
 }

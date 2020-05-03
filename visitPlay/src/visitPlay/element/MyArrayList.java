@@ -1,33 +1,32 @@
 package visitPlay.element;
 
 import visitPlay.util.FileProcessor;
-import visitPlay.util.Iterator;
+import visitPlay.util.IteratorI;
 import visitPlay.visitor.Visitor;
-
 import java.io.IOException;
 import java.nio.file.InvalidPathException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class MyArrayList implements Element, Iterator {
-    public List<MyElement> myElements;
+public class MyArrayList implements Element, IteratorI {
+    public MyArrayList(){};
+    public static List<MyElement> myElements;
+
     private MyArrayList(List<MyElement> myElementsIn){
         myElements=myElementsIn;
     }
 
     @Override
-    public String getLine() {
-        return null;
-    }
-
-    @Override
-    public void accept(Visitor visit) {
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
     @Override
     public Iterator getIterator() {
-        return null;
+        return myElements.iterator();
     }
+
 
     public static class Builder{
 
@@ -56,11 +55,6 @@ public class MyArrayList implements Element, Iterator {
                 e.printStackTrace();
             }
 
-            System.out.println("Control Reached Here in build()");
-            System.out.println("List:" +myElements);
-            for (MyElement myElement : myElements) {
-                System.out.println("Lines in List: " + myElement.getLine());
-            }
             return new MyArrayList(myElements);
         }
         private MyElement encapsulateString(String sentence){
@@ -71,4 +65,5 @@ public class MyArrayList implements Element, Iterator {
 
         }
     }
+
 }
