@@ -11,8 +11,8 @@ import java.nio.file.InvalidPathException;
 /**
  * FileProcessor Class
  */
-public final class FileProcessor implements FileProcessorI {
-	private BufferedReader reader;
+public final class FileProcessor{
+	private final BufferedReader reader;
 	private String line;
 
 	public FileProcessor(String inputFilePath) 

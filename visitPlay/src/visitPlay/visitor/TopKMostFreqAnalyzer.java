@@ -20,7 +20,7 @@ public class TopKMostFreqAnalyzer implements Visitor {
         Iterator iterator=myIterator.getIterator();
         while(iterator.hasNext()) {
             Element currentElement=(Element) iterator.next();
-            System.out.println("Element is: " + currentElement.toString());
+            //System.out.println("Element is: " + currentElement.toString());
             calculateTopKFreqWords(currentElement);
         }
     }
@@ -56,13 +56,11 @@ public class TopKMostFreqAnalyzer implements Visitor {
             currentElement=priorityQueue.poll();
             if (currentElement != null) {
                 resultList.add(currentElement.getWord());
-                System.out.println("Word: "+currentElement.getWord()+" Count: "+currentElement.getCount());
+                //System.out.println("Word: "+currentElement.getWord()+" Count: "+currentElement.getCount());
             }
         }
 
-        System.out.println("Result List: "+resultList);
-
+        System.out.println("Result List of TopK >>> "+resultList);
         topKMostFreqAnalyzerResults.addToResultList(resultList);
-
     }
 }

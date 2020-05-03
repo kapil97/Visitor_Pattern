@@ -37,7 +37,6 @@ public class Driver {
             System.err.printf("Error: Incorrect number of arguments. Program accepts %d arguments. Provided: %d " , REQUIRED_NUMBER_OF_ARGS, args.length );
             System.exit(0);
         }
-        System.out.println("Driver.main");
         String inputFilename=args[0],
                 acceptableWordsFilename=args[1],
                 k=args[2],

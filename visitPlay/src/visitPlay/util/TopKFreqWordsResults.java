@@ -23,7 +23,6 @@ public class TopKFreqWordsResults implements Results{
 
     @Override
     public void writeToFile() {
-
             try {
                 File resultFile=new File(TopKOutputFileName);
                 if (resultFile.exists()){

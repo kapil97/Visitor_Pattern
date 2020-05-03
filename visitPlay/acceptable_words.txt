@@ -1,0 +1,5 @@
+houses
+animals
+Familiar
+core
+mole
