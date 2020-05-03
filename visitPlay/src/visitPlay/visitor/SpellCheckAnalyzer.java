@@ -75,9 +75,11 @@ public class SpellCheckAnalyzer implements Visitor {
         for(String word:words) {
             for (Map.Entry mapElement : acceptableWords.entrySet()) {
                 int length = word.length();
-                if((int)mapElement.getKey()==length) {
-                    List<String> acceptableWordsListByLength= (List<String>) mapElement.getValue();
-                    spellCheck(word,acceptableWordsListByLength);
+                if(length>2) {
+                    if ((int) mapElement.getKey() == length) {
+                        List<String> acceptableWordsListByLength = (List<String>) mapElement.getValue();
+                        spellCheck(word, acceptableWordsListByLength);
+                    }
                 }
             }
         }
@@ -118,5 +120,9 @@ public class SpellCheckAnalyzer implements Visitor {
         }
         acceptableWords.get(length).add(word.toLowerCase());
         }
+    @Override
+    public String toString(){
+        return "SpellCheckAnalyzer";
     }
+}
 

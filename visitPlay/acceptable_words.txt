@@ -1,5 +1,4 @@
-houses
-animals
-Familiar
-core
-mole
+simplicity
+given
+an
+if

@@ -77,4 +77,8 @@ public class TopKMostFreqAnalyzer implements Visitor {
         System.out.println("Result List of TopK >>> "+resultList);
         topKMostFreqAnalyzerResults.addToResultList(resultList);
     }
+    @Override
+    public String toString(){
+        return "TopKMostFreqAnalyzer";
+    }
 }
