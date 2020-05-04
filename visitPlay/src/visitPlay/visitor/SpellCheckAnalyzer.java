@@ -3,17 +3,20 @@ package visitPlay.visitor;
 import visitPlay.element.Element;
 import visitPlay.element.MyArrayList;
 import visitPlay.util.FileProcessor;
-import visitPlay.util.IteratorI;
 import visitPlay.util.Results;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Iterator;
+
 
 public class SpellCheckAnalyzer implements Visitor {
     String acceptableWordsFilename;
     Results spellCheckAnalyzerResults;
     List<String> resultList=new ArrayList<>();
     private final Map<Integer, List<String>> acceptableWords=new HashMap<>();
-    IteratorI myIterator=new MyArrayList();
 
     /**
      * Spell Check Analyzer Constructor to process acceptable words file.
@@ -51,7 +54,7 @@ public class SpellCheckAnalyzer implements Visitor {
      */
     @Override
     public void visit(Element myElement) {
-        Iterator iterator=myIterator.getIterator();
+        Iterator iterator=((MyArrayList)myElement).getIterator();
         while(iterator.hasNext()) {
             Element currentElement=(Element) iterator.next();
             spellCheckByLength(currentElement);

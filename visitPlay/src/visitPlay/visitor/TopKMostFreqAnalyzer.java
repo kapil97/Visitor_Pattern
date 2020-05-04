@@ -2,14 +2,22 @@ package visitPlay.visitor;
 
 import visitPlay.element.Element;
 import visitPlay.element.MyArrayList;
-import visitPlay.util.*;
-import java.util.*;
+import visitPlay.util.ElementCheck;
+import visitPlay.util.ElementComparator;
+import visitPlay.util.Results;
+import visitPlay.util.WordMap;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Queue;
+import java.util.PriorityQueue;
+import java.util.Map;
+import java.util.LinkedHashMap;
+
 
 public class TopKMostFreqAnalyzer implements Visitor {
     String k;
     Results topKMostFreqAnalyzerResults;
-    IteratorI myIterator=new MyArrayList();
-
     /**
      * TopKMostFreqAnalyzer Constructor.
      * @param kIn
@@ -26,7 +34,7 @@ public class TopKMostFreqAnalyzer implements Visitor {
      */
     @Override
     public void visit(Element element) {
-        Iterator iterator=myIterator.getIterator();
+        Iterator iterator=((MyArrayList)element).getIterator();
         while(iterator.hasNext()) {
             Element currentElement=(Element) iterator.next();
             //System.out.println("Element is: " + currentElement.toString());

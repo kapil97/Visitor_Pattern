@@ -1,7 +1,6 @@
 package visitPlay.element;
 
 import visitPlay.util.FileProcessor;
-import visitPlay.util.IteratorI;
 import visitPlay.visitor.Visitor;
 import java.io.IOException;
 import java.nio.file.InvalidPathException;
@@ -9,8 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class MyArrayList implements Element, IteratorI {
-    public MyArrayList(){};
+public class MyArrayList implements Element{
     public static List<MyElement> myElements;
 
     /**
@@ -35,7 +33,6 @@ public class MyArrayList implements Element, IteratorI {
      * @return
      */
 
-    @Override
     public Iterator getIterator() {
         return myElements.iterator();
     }
